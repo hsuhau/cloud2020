@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  zipkin:
+    # docker run -d -p 9411:9411 openzipkin/zipkin
+    base-url: http://192.168.116.134:9411
+  sleuth:
+    sampler:
+      # 采样率值介于0到1之间，1则表示全部采集
+      probability: 1
   datasource:
     # 当前数据源操作类型
     type: com.alibaba.druid.pool.DruidDataSource

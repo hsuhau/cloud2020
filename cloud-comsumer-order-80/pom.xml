@@ -14,6 +14,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.hsuhau.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
