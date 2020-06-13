@@ -14,9 +14,23 @@ spring:
           password: I211324>>just
           username: hsuhau
       label: master # 读取分支
+  rabbitmq:
+    host: 192.168.116.134
+    port: 5672
+    username: guest
+    password: guest
 
 # 服务注册到Eureka地址
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+
+
+
+# rabbitMQ相关配置，暴露Bus刷新配置的端点
+management:
+  endpoints: # 暴露Bus刷新配置的端点
+    web:
+      exposure:
+        include: bus-refresh
