@@ -1,0 +1,27 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+#        server-addr: localhost:8848 # Nacos服务注册中心地址
+        # 换成Nginx的1111端口，做集群
+        server-addr: 192.168.116.134:1111
+      config:
+#        server-addr: localhost:8848 # Nacos作为服务配置中心地址
+        # 换成Nginx的1111端口，做集群
+        server-addr: 192.168.116.134:1111
+        file-extension: yaml # 指定yaml格式的配置
+        group: DEV_GROUP
+#        namespace: 72fa24b0-596a-4c52-8a62-c5e2608377d0
+        # 集群 新的nameapce id
+        namespace: b3124d37-2f63-42ac-8ab9-c41ee77ed4b6
+
+# 在 Nacos Spring Cloud 中，dataId 的完整格式如下：${prefix}-${spring.profile.active}.${file-extension}
+# prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+# spring.profile.active 即为当前环境对应的 profile，详情可以参考 Spring Boot文档。 注意：当 spring.profile.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变成 ${prefix}.${file-extension}
+# file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置。目前只支持 properties 和 yaml 类型。
+
+# nacos-config-client-dev.yaml
