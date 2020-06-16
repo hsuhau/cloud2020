@@ -1,0 +1,23 @@
+server:
+  port: 84
+
+spring:
+  application:
+    name: nacos-order-cosumer
+  cloud:
+    nacos:
+      discovery:
+#        server-addr: localhost:8848
+        # 换成Nginx的1111端口，做集群
+        server-addr: 192.168.116.134:1111
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
+# 激活对Feign的支持
+feign:
+  sentinel:
+    enabled: true
