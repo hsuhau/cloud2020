@@ -60,7 +60,7 @@
         <docker.host>tcp://192.168.116.134:2375</docker.host>
         <docker.maven.plugin.version>1.1.0</docker.maven.plugin.version>
         <junit.jupiter.version>5.6.0-RC1</junit.jupiter.version>
-        <mysql-connector.version>8.0.18</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.1.22</druid.version>
         <lombok.version>1.18.10</lombok.version>
         <mybatis.spring.boot.version>2.1.2</mybatis.spring.boot.version>
